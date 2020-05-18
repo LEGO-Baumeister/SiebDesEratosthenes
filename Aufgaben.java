@@ -6,15 +6,15 @@
  * @version 07.05.2020
  */
 public class Aufgaben {
-    
+
     int[] zahlen;
     int[] zahlen2;
-    
+
     public Aufgaben() {
         zahlen = new int[200];
         zahlen2 = new int[200];
     }
-    
+
     public void fuelle5()
 
     {
@@ -30,7 +30,7 @@ public class Aufgaben {
         zahlen[10] = -1;
 
     }
-    
+
     public void fuellealle() {
         for (int i = 0; i < zahlen2.length; i++) {
             zahlen2[i] = i + 1;
