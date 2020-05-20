@@ -36,29 +36,52 @@ public class Sieb
     }
 
     public void ausgabeAlles()
-    {
-        for (int i = 0; i<=zahlen.length - 1; i++)
+    {   
+        int zaehler = 1;
+        int stellen = String.valueOf(zahlen.length).length();
+        for(int i = 0; i <= stellen; i++)
         {
-            System.out.println(zahlen[i]);
+            System.out.print(" ");
+        }
+        for (int i = 0; i<=zahlen.length - 1; i++)
+        {   
+
+            if(zaehler == 5)
+            {
+                System.out.println("");
+                zaehler = 0;
+            }
+            if(zahlen[i] != 0)
+            {   
+                if(stellen <= 5)
+                {
+                    System.out.print(String.format("%5d", zahlen[i]));
+                    System.out.print(";");
+                } else {
+                    System.out.print(String.format("%"+stellen+"d", zahlen[i]));
+                    System.out.print(";");
+                }
+                zaehler++;
+            }
         }
     }
-    
+
     public void siebe()
     {   
         zahlen[1]= 0;  //eins ist keine Primzahl - Definition
-        for(int i : zahlen[])
-        {
-            if(i )
-        }
         for (int i = 2; i<zahlen.length - 1; i++) //mit der Variablen i gehen wir von Platz zu Platz, um deren Vielfach zu löschen
         {
-            for (int j = 2; j * i < zahlen.length; j++) // j beschreibt, welches Vielfache von i gelöscht werden soll
+            if(zahlen[i] != 0)
             {
-                if (zahlen[i] != 0)
+                for (int j = 2; j * i < zahlen.length; j++) // j beschreibt, welches Vielfache von i gelöscht werden soll
                 {
-                    zahlen[i*j]= 0;
-                }
-            } 
+                    if (zahlen[i] != 0)
+                    {
+                        zahlen[i*j]= 0;
+                    }
+                } 
+            }
+
             if(i == Math.sqrt(zahlen.length))
             {   
                 System.err.println(i + " " + zahlen[i]);
